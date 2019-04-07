@@ -3,11 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Escaner/src/View/FXMLDocument.fxml</file>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Escaner/src/Model/codigo.txt</file>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Escaner/src/Model/Escaner.java</file>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Escaner/src/View/EscanerView.java</file>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Escaner/src/View/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/View/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Simbolo.java</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Escaner.java</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/View/EscanerStyleSheet.css</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/codigo.txt</file>
         </group>
     </open-files>
 </project-private>

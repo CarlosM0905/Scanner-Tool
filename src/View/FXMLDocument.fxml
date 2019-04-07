@@ -1,14 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="200" prefWidth="320" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.FXMLDocumentController">
-    <children>
-        <Button layoutX="126" layoutY="90" text="Click Me!" onAction="#handleButtonAction" fx:id="button" />
-        <Label layoutX="126" layoutY="120" minHeight="16" minWidth="69" fx:id="label" />
-    </children>
-</AnchorPane>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="810.0" stylesheets="@EscanerStyleSheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox id="sideBar" prefHeight="415.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="82.0" prefWidth="150.0">
+               <children>
+                  <Text fill="WHITE" layoutX="13.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compilators Tools" textAlignment="CENTER" wrappingWidth="123.13671875">
+                     <font>
+                        <Font name="Segoe UI Bold" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <JFXButton id="btnOption" prefHeight="48.0" prefWidth="155.0" ripplerFill="#1f618d" text="Scanner" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_scanner_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="btnOption" prefHeight="48.0" prefWidth="155.0" ripplerFill="#1f618d" text="Parser" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_checked_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXButton id="btnOption" prefHeight="48.0" prefWidth="155.0" ripplerFill="#1f618d" text="More" textFill="WHITE">
+               <font>
+                  <Font name="Segoe UI" size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_more_32px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <AnchorPane id="topBar" prefHeight="35.0" prefWidth="724.0" BorderPane.alignment="CENTER">
+         <children>
+            <JFXButton id="btnSalir" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="762.0" prefHeight="42.0" prefWidth="51.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/icons8_delete_sign_32px_1.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <TabPane prefHeight="420.0" prefWidth="596.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="Scanner">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0" stylesheets="@EscanerStyleSheet.css">
+                     <top>
+                        <FlowPane id="paneTop" alignment="CENTER" columnHalignment="CENTER" prefHeight="47.0" prefWidth="663.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <JFXButton id="btnOpenFile" text="Open File" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <Text id="txtOpenFile" strokeType="OUTSIDE" strokeWidth="0.0" text="  Open file with a .cpp or .txt extension" />
+                           </children>
+                        </FlowPane>
+                     </top>
+                     <center>
+                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                     </center>
+                     <bottom>
+                        <FlowPane prefHeight="88.0" prefWidth="663.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Pane prefHeight="123.0" prefWidth="132.0" />
+                              <Pane prefHeight="123.0" prefWidth="132.0" />
+                              <Pane prefHeight="123.0" prefWidth="132.0" />
+                              <Pane prefHeight="123.0" prefWidth="132.0" />
+                              <Pane prefHeight="123.0" prefWidth="132.0" />
+                           </children>
+                        </FlowPane>
+                     </bottom>
+                  </BorderPane>
+               </content>
+            </Tab>
+          <Tab text="Parser" />
+        </tabs>
+      </TabPane>
+   </center>
+</BorderPane>
