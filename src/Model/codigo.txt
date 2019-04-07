@@ -1,10 +1,2 @@
-/* adadadasda */
 
-int main(){
-int n = 3;
-
-/* adadadasda */
-if(n>2){
-    cout << "Hola mundo" ;
-}
-}
+using namespace std;
