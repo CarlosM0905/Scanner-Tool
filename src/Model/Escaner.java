@@ -100,11 +100,10 @@ public class Escaner {
         String cadena = leerArchivo();
         for (int i = 0; i < 30; i++) {
             Simbolo simbolo = obtenerSimbolo(cadena);
-            if(simbolo != null){
+            if (simbolo != null) {
                 System.out.println(simbolo);
-                
-            }
-            else{
+
+            } else {
                 break;
             }
         }
@@ -115,32 +114,31 @@ public class Escaner {
             // Se omiten espacios en blanco y saltos de linea
             while (cadena.charAt(indice) == ' ' || cadena.charAt(indice) == '\n') {
                 indice++;
-                if(indice == cadena.length()){
+                if (indice == cadena.length()) {
                     return null;
                 }
             }
-            
+
             // Se verfica si es un comentario multilinea
-            if(cadena.charAt(indice) == '/' && cadena.charAt(indice+1) == '*'){
+            if (cadena.charAt(indice) == '/' && cadena.charAt(indice + 1) == '*') {
                 //Si lo es, se omite
-                indice+=2;
-                do{
+                indice += 2;
+                do {
                     indice++;
-                }while(cadena.charAt(indice) != '*' && cadena.charAt(indice+1) != '/');
-                indice+=2;
+                } while (cadena.charAt(indice) != '*' && cadena.charAt(indice + 1) != '/');
+                indice += 2;
             }
-            
+
             // Se verifica si es un comentario simple
-            if(cadena.charAt(indice) == '/' && cadena.charAt(indice+1) == '/'){
+            if (cadena.charAt(indice) == '/' && cadena.charAt(indice + 1) == '/') {
                 //Si lo es, se omite
-                indice+=2;
-                do{
+                indice += 2;
+                do {
                     indice++;
-                }while(cadena.charAt(indice) != '\n');
-                indice+=1;
+                } while (cadena.charAt(indice) != '\n');
+                indice += 1;
             }
-            
-            
+
             // Es un identificador, palabra clave o funcion
             if (cadena.charAt(indice) >= 'a' && cadena.charAt(indice) <= 'z'
                     || cadena.charAt(indice) >= 'A' && cadena.charAt(indice) <= 'Z'
@@ -252,9 +250,9 @@ public class Escaner {
 
         Escaner.indice = indice;
 
-        if(operador.equals("<<") || operador.equals(">>")){
+        if (operador.equals("<<") || operador.equals(">>")) {
             return simbolo = new Simbolo(operador, "Flujo de programa");
-        }else{
+        } else {
             return simbolo = new Simbolo(operador, "Operador Relacional");
         }
     }
