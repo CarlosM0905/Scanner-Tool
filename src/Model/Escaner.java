@@ -5,7 +5,9 @@
  */
 package Model;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -109,6 +111,22 @@ public class Escaner {
         }
     }
 
+    public static void abrirarchivo(String archivo){
+
+     try {
+
+            File objetofile = new File (archivo);
+            Desktop.getDesktop().open(objetofile);
+            System.out.println(objetofile.getPath());
+
+     }catch (IOException ex) {
+
+            System.out.println(ex);
+
+     }
+
+}                    
+    
     public static Simbolo obtenerSimbolo(String cadena) {
         if (indice <= cadena.length()) {
             // Se omiten espacios en blanco y saltos de linea

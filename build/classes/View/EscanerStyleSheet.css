@@ -10,16 +10,16 @@ and open the template in the editor.
 
 #topBar{
     -fx-background-color: #1F618D;
-    
+
 }
 
 #btnSalir{
-   
+
 }
 
 #sideBar{
     -fx-background-color: #263238;
-    
+
 }
 
 #btnOption{
@@ -38,7 +38,7 @@ and open the template in the editor.
 
 /* Estilos aplicados a la tabla vista */
 .table-view{
-   -fx-background-color: transparent;
+    -fx-background-color: transparent;
 }
 
 .table-view:focused{
@@ -86,34 +86,34 @@ and open the template in the editor.
 /*Estilos aplicados al panel con tabs*/
 
 .tab-pane *.tab-header-area *.tab-header-background {
-  -fx-background-color: #263238;
+    -fx-background-color: #263238;
 }
 
 .tab-pane {
-  -fx-tab-min-width:60px;
-  -fx-tab-max-width:60px;
-  -fx-tab-min-height:40px;
-  -fx-tab-max-height:40px;
+    -fx-tab-min-width:60px;
+    -fx-tab-max-width:60px;
+    -fx-tab-min-height:40px;
+    -fx-tab-max-height:40px;
 }
 
 .tab{
-  -fx-font-family: "Segoe UI";
-  -fx-font-size: 16;
-  -fx-background-color: #263238;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16;
+    -fx-background-color: #263238;
 
 }
 .tab-label{
-   -fx-background-color: transparent;
-   -fx-alignment: CENTER;
-   -fx-text-fill: transparent;
-   
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+    -fx-text-fill: transparent;
+
 }
 
 .tab-label:selected{
-   -fx-background-color: transparent;
-   -fx-alignment: CENTER;
-   -fx-text-fill: #005797;
-   
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+    -fx-text-fill: #005797;
+
 }
 
 .tab:selected {

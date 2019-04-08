@@ -90,7 +90,7 @@
                      <top>
                         <FlowPane id="paneTop" alignment="CENTER" columnHalignment="CENTER" prefHeight="47.0" prefWidth="663.0" style="-fx-background-color: #263238;" BorderPane.alignment="CENTER">
                            <children>
-                              <JFXButton id="btnOpenFile" fx:id="btnOpen" text="Open File" textFill="WHITE">
+                              <JFXButton id="btnOpenFile" fx:id="btnOpen" onAction="#openFile" text="Open File" textFill="WHITE">
                                  <font>
                                     <Font size="14.0" />
                                  </font>

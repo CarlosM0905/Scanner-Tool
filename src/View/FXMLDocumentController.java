@@ -10,6 +10,8 @@ import Model.Escaner;
 import static Model.Escaner.obtenerSimbolo;
 import Model.Simbolo;
 import com.jfoenix.controls.JFXButton;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -23,6 +25,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javax.swing.JFileChooser;
 
 /**
  *
@@ -77,9 +81,9 @@ public class FXMLDocumentController implements Initializable, DraggedScene {
         int c_id = 0;
         int c_op = 0;
         int c_oth = 0;
-        
-        for (int i = 0; i < 30; i++) {
-            Simbolo simbolo = obtenerSimbolo(cadenaArchivo);
+            Simbolo simbolo;
+        do {
+            simbolo = obtenerSimbolo(cadenaArchivo);
             
             if (simbolo != null) {
                 simbolos.add(simbolo);
@@ -112,10 +116,8 @@ public class FXMLDocumentController implements Initializable, DraggedScene {
                         break;
                     
                 }
-            } else {
-                break;
-            }
-        }
+            } 
+        } while(simbolo != null);
         
         ObservableList<Simbolo> simbolosList = FXCollections.observableArrayList(simbolos);
         
@@ -142,6 +144,30 @@ public class FXMLDocumentController implements Initializable, DraggedScene {
     @FXML
     private void exit(ActionEvent event) {
         System.exit(0);
+    }
+
+    @FXML
+    private void openFile(ActionEvent event) throws IOException {
+        //Escaner.abrirarchivo("src/Model/codigo.txt");
+        
+        FileChooser jfile = new FileChooser();
+        configureFileChooser(jfile);
+        
+        File file = jfile.showOpenDialog(null);
+         if (file != null) {
+            System.out.println(file.getCanonicalPath());
+        }
+    }
+    
+    private static void configureFileChooser(
+        final FileChooser fileChooser) {      
+            fileChooser.setTitle("Seleccionar .txt o .cpp");
+                          
+            fileChooser.getExtensionFilters().addAll(
+                
+                new FileChooser.ExtensionFilter("CPP", "*.cpp"),
+                new FileChooser.ExtensionFilter("TXT", "*.txt")
+            );
     }
     
 }
