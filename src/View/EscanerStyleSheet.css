@@ -9,31 +9,69 @@ and open the template in the editor.
 */
 
 #topBar{
-    -fx-background-color: #1F618D;
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 3, 0, 0, 0);
+
 
 }
 
-#btnSalir{
-
-}
 
 #sideBar{
-    -fx-background-color: #263238;
+    -fx-background-color: #fff;
 
 }
 
 #btnOption{
-    -fx-background-color: #1C2833;
+    -fx-background-color: #fff;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 0);
+    -fx-text-fill: #aaa;
+    -fx-background-radius: 0px;
+
+}
+
+#btnOption:hover{
+    -fx-background-color: #ccc;
+    
+}
+
+#btnOption:visited{
+    -fx-background-color: #ccc;
+    
 }
 
 #btnOpenFile{
-    -fx-background-color: #1F618D;
+    -fx-background-color: #fff;
+    -fx-background-radius: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 2, 0, 0, 0);
+
+    
+}
+
+#btnSalir{
+    -fx-background-color: #fff;
+}
+
+#btnSalir:hover{
+    -fx-background-color: #ddd;
 }
 
 #paneResult{
-    -fx-background-color: #263238;
+    -fx-background-color: #ddd;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 2, 0, 0, 0);
 
 }
+
+#paneTop{
+    -fx-background-color: #ddd;
+    
+}
+
+#paneResult:hover{
+    -fx-background-color: #fff;
+    
+}
+
+
 
 
 /* Estilos aplicados a la tabla vista */
@@ -48,13 +86,16 @@ and open the template in the editor.
 
 
 .table-view .column-header-background{
-    -fx-background-color: #005797;
+    -fx-background-color: #ddd;
 }
 
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
-    -fx-text-fill: white;
+    -fx-text-fill: #999;
     -fx-text-alignment: center;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 18;
+    
 }
 
 .table-view .column-header {
@@ -62,31 +103,38 @@ and open the template in the editor.
 }
 
 .table-view .table-cell{
-    -fx-text-fill: white;
+    -fx-text-fill: #aaa;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 17;
 }
 
+
+
 .table-row-cell{
-    -fx-background-color: -fx-table-cell-border-color, #1C2833;
+    -fx-background-color: -fx-table-cell-border-color, #fff;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */
 }
 
 .table-row-cell:odd{
-    -fx-background-color: -fx-table-cell-border-color, #1C2833;
+    -fx-background-color: -fx-table-cell-border-color, #fff;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */  
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #005797;
+    -fx-background-color: #ddd;
+    -fx-text-fill: #fff;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
 }
 
+
+
 /*Estilos aplicados al panel con tabs*/
 
 .tab-pane *.tab-header-area *.tab-header-background {
-    -fx-background-color: #263238;
+    -fx-background-color: #ddd;
 }
 
 .tab-pane {
@@ -97,9 +145,9 @@ and open the template in the editor.
 }
 
 .tab{
-    -fx-font-family: "Segoe UI";
+    -fx-font-family: "Segoe UI Light";
     -fx-font-size: 16;
-    -fx-background-color: #263238;
+    -fx-background-color: #ddd;
 
 }
 .tab-label{
@@ -112,10 +160,84 @@ and open the template in the editor.
 .tab-label:selected{
     -fx-background-color: transparent;
     -fx-alignment: CENTER;
-    -fx-text-fill: #005797;
+    -fx-text-fill: #ddd;
 
 }
 
 .tab:selected {
-    -fx-background-color: #263238 ;
+    -fx-background-color: #ddd ;
+}
+
+
+.scroll-bar{
+ -fx-background-color: #aaa;
+ -fx-background-radius: 0px;
+}
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+ -fx-background-color: transparent;
+ -fx-border-color:transparent;
+ -fx-background-radius: 0px;
+}
+.scroll-bar:vertical .track-background,
+.scroll-bar:horizontal .track-background {
+ -fx-background-color: transparent;
+ -fx-background-insets: 0;
+ -fx-background-radius: 0px;
+}
+.scroll-bar:horizontal .thumb {
+ -fx-background-color: rgb(211,211,211);
+ -fx-background-insets: 4 0 4 0;
+ -fx-background-radius: 0px;
+}
+.scroll-bar:vertical .thumb {
+ -fx-background-color: rgb(211,211,211);
+ -fx-background-insets: 0 4 0 4;
+ -fx-background-radius: 0px;
+}
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+ -fx-background-color: rgb(231,231,231);
+}
+.scroll-bar:horizontal .thumb:pressed,
+.scroll-bar:vertical .thumb:pressed {
+ -fx-background-color: rgb(255,255,255);
+}
+.scroll-bar:vertical .increment-button, .scroll-bar:vertical .decrement-button {
+ -fx-background-color:transparent;
+ -fx-background-radius: 0px;
+ -fx-padding: 5;
+}
+.scroll-bar:horizontal .increment-button, .scroll-bar:horizontal .decrement-button {
+ -fx-background-color:transparent;
+ -fx-background-radius: 0px;
+ -fx-padding: 5;
+}
+.scroll-bar:horizontal .increment-arrow {
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-background-color: rgb(211,211,211);
+ -fx-padding: 0.25em;
+ -fx-rotate: -90;
+}
+.scroll-bar:vertical .increment-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 0;
+}
+.scroll-bar:horizontal .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: 90;
+}
+.scroll-bar:vertical .decrement-arrow {
+ -fx-background-color: rgb(211,211,211);
+ -fx-shape: "M 0 0 L 4 8 L 8 0 Z";
+ -fx-padding: 0.25em;
+ -fx-rotate: -180;
+}
+.scroll-bar:vertical:focused,
+.scroll-bar:horizontal:focused {
+ -fx-background-color: transparent,rgb(96,96,96),rgb(96,96,96);
 }
