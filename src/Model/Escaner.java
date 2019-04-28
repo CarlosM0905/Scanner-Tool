@@ -25,7 +25,7 @@ public class Escaner {
     //Palabras reservadas por el lenguaje
     private static final String[] PALABRAS_R = {
         "break", "case", "catch", "class", "const", "continue", "default",
-        "delete", "do", "else", "enum", "false", "for", "friend",
+        "delete", "do", "else", "endif", "endwhile", "enum", "false", "for", "friend",
         "goto", "if", "inline", "namespace", "new", "operator", "private",
         "protected", "public", "register", "return", "signed", "sizeof", "static",
         "struct", "switch", "this", "throw", "true", "try", "typedef", "typeid", "typename",
@@ -37,9 +37,9 @@ public class Escaner {
         "bool", "byte", "double", "float", "int", "long", "short", "void"
     };
 
-    public static String leerArchivo() {
+    public static String leerArchivo(String ruta) {
         try {
-            FileReader lector = new FileReader("src/Model/codigo.txt");
+            FileReader lector = new FileReader(ruta);
             BufferedReader archivo = new BufferedReader(lector);
             String cadena = "";
             String linea = "";
@@ -54,6 +54,7 @@ public class Escaner {
 
             return cadena;
         } catch (FileNotFoundException ex) {
+            System.out.println(ruta);
             Logger.getLogger(Escaner.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
             Logger.getLogger(Escaner.class.getName()).log(Level.SEVERE, null, ex);
@@ -97,38 +98,24 @@ public class Escaner {
         return false;
     }
 
-    public static void main(String[] args) {
+    public static void abrirarchivo(String archivo) {
 
-        String cadena = leerArchivo();
-        for (int i = 0; i < 30; i++) {
-            Simbolo simbolo = obtenerSimbolo(cadena);
-            if (simbolo != null) {
-                System.out.println(simbolo);
+        try {
 
-            } else {
-                break;
-            }
-        }
-    }
-
-    public static void abrirarchivo(String archivo){
-
-     try {
-
-            File objetofile = new File (archivo);
+            File objetofile = new File(archivo);
             Desktop.getDesktop().open(objetofile);
             System.out.println(objetofile.getPath());
 
-     }catch (IOException ex) {
+        } catch (IOException ex) {
 
             System.out.println(ex);
 
-     }
+        }
 
-}                    
-    
+    }
+
     public static Simbolo obtenerSimbolo(String cadena) {
-        if (indice <= cadena.length()) {
+        if (indice < cadena.length()) {
             // Se omiten espacios en blanco y saltos de linea
             while (cadena.charAt(indice) == ' ' || cadena.charAt(indice) == '\n') {
                 indice++;
@@ -203,7 +190,8 @@ public class Escaner {
             if (cadena.charAt(indice) >= '!' && cadena.charAt(indice) <= '/'
                     || cadena.charAt(indice) >= ':' && cadena.charAt(indice) <= '@'
                     || cadena.charAt(indice) >= '[' && cadena.charAt(indice) <= '`'
-                    || cadena.charAt(indice) >= '{' && cadena.charAt(indice) <= '¡') {
+                    || cadena.charAt(indice) >= '{' && cadena.charAt(indice) <= '¡'
+                    || cadena.charAt(indice) == '$') {
 
                 String otro = "";
                 otro += cadena.charAt(indice);

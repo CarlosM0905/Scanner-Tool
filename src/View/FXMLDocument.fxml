@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -18,16 +19,8 @@
    <left>
       <VBox id="sideBar" prefHeight="496.0" prefWidth="148.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="95.0" prefWidth="151.0">
-               <children>
-                  <Text fill="#aaaaaa" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Compilators Tools" textAlignment="CENTER" wrappingWidth="149.13671875">
-                     <font>
-                        <Font name="Segoe UI Semilight" size="25.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <Button id="btnOption" fx:id="btnScanner" mnemonicParsing="false" prefHeight="48.0" prefWidth="150.0" text="Scanner">
+            <AnchorPane prefHeight="95.0" prefWidth="151.0" />
+            <Button id="btnOption" fx:id="btnScanner" mnemonicParsing="false" onAction="#goScanner" prefHeight="48.0" prefWidth="150.0" text="Scanner">
                <font>
                   <Font name="Segoe UI Light" size="19.0" />
                </font>
@@ -39,7 +32,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button id="btnOption" fx:id="btnParser" mnemonicParsing="false" prefHeight="48.0" prefWidth="150.0" text="Parser">
+            <Button id="btnOption" fx:id="btnParser" mnemonicParsing="false" onAction="#goADFP" prefHeight="48.0" prefWidth="150.0" text="ADFP">
                <font>
                   <Font name="Segoe UI Light" size="19.0" />
                </font>
@@ -78,11 +71,16 @@
                   </ImageView>
                </graphic>
             </Button>
+            <Text fill="#aaaaaa" layoutX="5.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Compilators Tools" wrappingWidth="199.13671875">
+               <font>
+                  <Font name="Segoe UI Semilight" size="21.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </top>
    <center>
-      <TabPane prefHeight="420.0" prefWidth="596.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+      <TabPane fx:id="tbPane" prefHeight="420.0" prefWidth="596.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab closable="false">
                <content>
@@ -179,7 +177,33 @@
                   </BorderPane>
                </content>
             </Tab>
-          <Tab closable="false" />
+          <Tab closable="false">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <JFXTextArea id="txtAreaADFP" fx:id="txtAreaCode" focusColor="#c6c6c6" layoutX="38.0" layoutY="52.0" prefHeight="346.0" prefWidth="587.0" promptText="Write the code here" unFocusColor="WHITE" wrapText="true">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="14.0" />
+                           </font>
+                        </JFXTextArea>
+                        <Text id="txtOpenFile" fill="#888888" layoutX="141.0" layoutY="33.0" lineSpacing="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Write a code with if, endif, else, while, endwhile" wrappingWidth="312.8662109375">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="15.0" />
+                           </font>
+                        </Text>
+                        <Button id="btnOpenFile" fx:id="btnExample" layoutX="464.0" layoutY="12.0" mnemonicParsing="false" onAction="#showExample" prefHeight="31.0" prefWidth="76.0" text="Example" textFill="#666666">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="14.0" />
+                           </font>
+                        </Button>
+                        <Button id="btnOpenFile" fx:id="btnRecognize" layoutX="284.0" layoutY="408.0" mnemonicParsing="false" onAction="#recognize" prefHeight="31.0" prefWidth="94.0" text="Recognize" textFill="#666666">
+                           <font>
+                              <Font name="Segoe UI Semilight" size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
         </tabs>
       </TabPane>
    </center>
