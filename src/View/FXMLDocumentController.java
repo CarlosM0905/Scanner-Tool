@@ -212,7 +212,10 @@ public class FXMLDocumentController implements Initializable, DraggedScene {
 
     @FXML
     private void recognize(ActionEvent event) {
-        AFDP.completarPila(txtAreaCode.getText() + "$");
+        System.out.println(txtAreaCode.getText() + "$");
+        Escaner.resetScan();
+        AFDP auto = new AFDP();
+        auto.completarPila(txtAreaCode.getText() + "$");
     }
 
 }

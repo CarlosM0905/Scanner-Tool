@@ -324,5 +324,8 @@ public class Escaner {
 
         return simbolo = new Simbolo(caracter, "Caracter");
     }
+    public static void resetScan(){
+        indice = 0;
+    }
 
 }

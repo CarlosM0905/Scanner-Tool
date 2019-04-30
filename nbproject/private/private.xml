@@ -4,10 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/View/FXMLDocumentController.java</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Simbolo.java</file>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Escaner.java</file>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/View/EscanerStyleSheet.css</file>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/AFDP.java</file>
-            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/codigo.txt</file>
+            <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Principal.java</file>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Interface/DraggedScene.java</file>
             <file>file:/C:/Users/Carlos%20Rodriguez/Documents/NetBeansProjects/Scanner-Tool/src/Model/Pila.java</file>
         </group>
